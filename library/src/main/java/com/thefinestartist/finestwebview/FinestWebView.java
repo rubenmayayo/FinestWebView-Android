@@ -931,7 +931,7 @@ public class FinestWebView {
       }
     }
 
-    protected void showWithContext(Context context, String url) {
+    public void showWithContext(Context context, String url) {
       this.url = url;
       this.key = System.identityHashCode(this);
 
