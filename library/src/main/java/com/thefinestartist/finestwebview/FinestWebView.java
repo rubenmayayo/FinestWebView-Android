@@ -930,5 +930,20 @@ public class FinestWebView {
         ((Activity) context).overridePendingTransition(animationOpenEnter, animationOpenExit);
       }
     }
+
+    protected void showWithContext(Context context, String url) {
+      this.url = url;
+      this.key = System.identityHashCode(this);
+
+      Intent intent = new Intent(context, FinestWebViewActivity.class);
+      intent.putExtra("builder", this);
+
+      context.startActivity(intent);
+
+      if (context instanceof Activity) {
+        ((Activity) context).overridePendingTransition(animationOpenEnter, animationOpenExit);
+      }
+    }
+
   }
 }
